@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use auth;
 use App\Agenda;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\AgendaResource;
 
 class AgendaController extends Controller
@@ -16,8 +16,13 @@ class AgendaController extends Controller
      */
     public function index()
     {
-        // return AgendaResource::collection(Agenda::where('user_id',2)->paginate(3));
-        return AgendaResource::collection(Agenda::all());
+        $user_id = auth()->user()->id;
+        // dd($user_id);
+        if ($user_id) {
+            // return AgendaResource::collection(Agenda::all());
+            return AgendaResource::collection(Agenda::where('user_id',"$user_id")->get());
+        }
+        // return AgendaResource::collection(Agenda::all());
     }
 
     /**
