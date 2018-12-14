@@ -31,7 +31,6 @@ class AuthController extends Controller
     }
     public function register(Request $request)
     {
-        // dd(Hash::make($request->password));
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -40,13 +39,12 @@ class AuthController extends Controller
         return User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => Hash::make($request->password)
         ]);
     }
 
     public function logout()
     {
-        // dd(auth()->user()->id);
         auth()->user()->tokens->each(function ($token, $key) {
             $token->delete();
         });
