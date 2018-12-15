@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Home sweet home</div>
+                <div class="card-header text-info">Dashboard dude</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,7 +15,7 @@
                     @endif
 
                     <div>
-                        Aici vine ce scriem
+                        Aici vine dashboardul
                     </div>
                 </div>
             </div>
