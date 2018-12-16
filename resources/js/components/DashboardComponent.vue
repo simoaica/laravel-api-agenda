@@ -7,7 +7,7 @@
       app
     >
       <v-list dense>
-        <v-list-tile to="home" ripple>
+        <v-list-tile ripple>
           <v-list-tile-action>
             <v-icon>dashboard</v-icon>
           </v-list-tile-action>
