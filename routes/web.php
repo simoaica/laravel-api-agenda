@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/status', function () {
+    return redirect('home')->with('status','This is the success message!');
+});
+
+Route::get('/error', function () {
+    return redirect('home')->with('errors',['Error nr1','Error nr1']);
+});
+
 Auth::routes();
 // Auth::routes(['register' => false]);
 

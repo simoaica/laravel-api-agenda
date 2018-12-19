@@ -17,7 +17,7 @@ class CheckForAdmin
     public function handle($request, Closure $next)
     {
         if (!Auth::user()->is_admin) {
-            return redirect()->back()->with('error','Nu esti admin gogule!');
+            return redirect()->back()->with('errors',['Nu esti admin gogule! :))','Asta e']);
         }
         return $next($request);
     }

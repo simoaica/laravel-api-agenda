@@ -23,6 +23,9 @@ Vue.use(Vuetify)
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('dashboard-component', require('./components/DashboardComponent.vue'));
+Vue.component('erroralerts', require('./components/ErrorAlertsComponent.vue'));
+Vue.component('successalerts', require('./components/SuccessAlertsComponent.vue'));
+
 
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
